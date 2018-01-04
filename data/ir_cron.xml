@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
+<odoo>
     <data noupdate="False">
         <record model='ir.cron' id='update_cl_financial'>
             <field name='name'>Update Chilean Financial Indicators</field>
@@ -11,12 +11,7 @@
             <field name='model'>webservices.server</field>
             <field name='function'>currency_schedule_update</field>
             <field name='args'>()</field>
-
-
-<!-- key 'update_xml' is deprecated in favor of 'data' for file 'ir_cron.xml'. -->
-
-
         </record>
     </data>
-</openerp>
+</odoo>
 
