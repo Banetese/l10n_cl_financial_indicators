@@ -28,12 +28,12 @@ class L10nClFinancialIndicators(models.Model):
             return
 
         data_json = a['data']
-        
+
         _logger.info(
             'Data showed locally... Date: {}, Value: {}'.format(
             data_json[indicadores[self.name][1]][0]['Fecha'],
             data_json[indicadores[self.name][1]][0]['Valor']))
-        
+
         rate = float(
             data_json[indicadores[self.name][1]][0]['Valor'].replace(
                 '.', '').replace(',', '.'))
@@ -58,8 +58,6 @@ class L10nClFinancialIndicators(models.Model):
                 'rate': 1/rate,
                 'name': rate_name}
             rates = self.env['res.currency.rate'].create(values)
-            print "se actualizó la moneda"
-            print indicadores[self.name][1]
 
     @api.model
     def currency_schedule_update(self):
