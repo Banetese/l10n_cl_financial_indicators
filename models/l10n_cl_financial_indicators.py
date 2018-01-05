@@ -61,7 +61,7 @@ class L10nClFinancialIndicators(models.Model):
 
     @api.model
     def currency_schedule_update(self):
-        for indic in indicadores.iteritems():
+        for indic in indicadores.items():
             _logger.info(
                 'Iterando la moneda "{}" por proceso planificado'.format(
                     indic[0]))
