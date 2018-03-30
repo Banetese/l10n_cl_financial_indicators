@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api
+from odoo import models, fields, api
 from datetime import datetime, time
-from dateutil.relativedelta import relativedelta
 import logging
-from openerp.tools.translate import _
-import json
-import openerp.addons.decimal_precision as dp
 
 indicadores = {
     'SBIFUSD': ['dolar', 'Dolares', 'sbif_usd', 'USD'],
@@ -32,12 +28,12 @@ class L10nClFinancialIndicators(models.Model):
             return
 
         data_json = a['data']
-        
+
         _logger.info(
             'Data showed locally... Date: {}, Value: {}'.format(
-                data_json[indicadores[self.name][1]][0]['Fecha'],
-                data_json[indicadores[self.name][1]][0]['Valor']))
-        
+            data_json[indicadores[self.name][1]][0]['Fecha'],
+            data_json[indicadores[self.name][1]][0]['Valor']))
+
         rate = float(
             data_json[indicadores[self.name][1]][0]['Valor'].replace(
                 '.', '').replace(',', '.'))
@@ -62,12 +58,10 @@ class L10nClFinancialIndicators(models.Model):
                 'rate': 1/rate,
                 'name': rate_name}
             rates = self.env['res.currency.rate'].create(values)
-            _logger.info('currency has been updated {}'.format(rates))
-            _logger.info(indicadores[self.name][1])
 
     @api.model
     def currency_schedule_update(self):
-        for indic in indicadores.iteritems():
+        for indic in indicadores.items():
             _logger.info(
                 'Iterando la moneda "{}" por proceso planificado'.format(
                     indic[0]))

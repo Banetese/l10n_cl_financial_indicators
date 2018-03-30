@@ -1,7 +1,6 @@
-"id","active","base","rounding","name","position","accuracy","symbol"
-"base.EUR","True","False","0.01","EUR","before","4","€"
-"base.UF","True","False","","UF","after","15","UF"
-"base.USD","True","False","0.01","USD","before","4","$"
-"base.UTM","True","False","1e-06","UTM","after","6","UTM"
-"base.CLP","True","True","1.0","CLP","before","4","$"
-
+"id","active","rounding","name","position","symbol"
+"base.EUR","True","0.01","EUR","before","€"
+"base.UF","True","0.01","UF","after","UF"
+"base.USD","True","0.01","USD","before","U$S"
+"base.UTM","True","0.01","UTM","after","UTM"
+"base.CLP","True","1.0","CLP","before","CL$"

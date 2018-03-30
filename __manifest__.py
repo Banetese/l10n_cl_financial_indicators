@@ -19,7 +19,7 @@
 
 {
     'name': 'Chilean Financial Indicators',
-    'version': '1.0',
+    'version': '10.0.2.0.0',
     'category': 'Tools',
     'license': 'AGPL-3',
     'description': '''Update UF, UTM and Dollar Official Value in a daily basis
@@ -27,16 +27,18 @@ using SBIF webservices''',
     'author': 'Blanco Martin & Asociados',
     'website': 'http://blancomartin.cl',
     'depends': [
-        'base',
+#         'base',
         'webservices_generic',
-        'decimal_precision_currency'
+        # 'decimal_precision_currency'
     ],
     'data': [
         'views/update_button.xml',
         'data/ir_cron.xml',
-        'data/res.currency.csv',
+#         'data/res.currency.csv',
         'data/webservices.server.csv',
+        'data/decimal_data.xml',
     ],
     'installable': True,
+    'auto_install': False,
+    'application': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
