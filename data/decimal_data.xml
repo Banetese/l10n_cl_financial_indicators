@@ -4,18 +4,13 @@
         <!--
              Precisions
         -->
-        <!--<record forcecreate="True" id="decimal_currency" model="decimal.precision">
-            <field name="name">Currency</field>
-            <field name="digits">9</field>
-        </record>-->
-        <!-- Decimal Precision -->
 
-        <record forcecreate="True" id="account.decimal_currency" model="decimal.precision">
+        <record forcecreate="True" id="decimal_currency" model="decimal.precision">
             <field name="name">Currency</field>
             <field name="digits">14</field>
         </record>
 
-        <record forcecreate="True" id="account.decimal_currency_rate" model="decimal.precision">
+        <record forcecreate="True" id="decimal_currency_rate" model="decimal.precision">
             <field name="name">Currency Rate</field>
             <field name="digits">14</field>
         </record>
